@@ -1,0 +1,10 @@
+<ul>
+  <% @movies.each do |movie| %>
+    <li> 
+      <%= movie.title %>
+      |
+      <%= movie.snippet %> 
+      <%= link_to 'see more', movie_url(movie.id) %>
+    </li>
+  <% end %>
+</ul>

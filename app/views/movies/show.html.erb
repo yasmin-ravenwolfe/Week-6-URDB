@@ -1,0 +1,13 @@
+<h1><%= @movie.title %></h1>
+
+<br>
+
+<%= image_tag @movie.gif_url %>
+<p><%= link_to 'See the trailer', @movie.trailer_url %></p>
+
+<h3>Description:</h3>
+<p><%= @movie.description %></p>
+
+<br>
+
+<%= link_to 'Home', root_url %>
