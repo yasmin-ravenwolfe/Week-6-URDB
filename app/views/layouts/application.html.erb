@@ -16,13 +16,14 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
+  	<%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= render partial: 'shared/navbar'
+    <%= render partial: 'layouts/navbar' %>
     <%= yield %>
 
 
