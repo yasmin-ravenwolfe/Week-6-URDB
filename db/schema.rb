@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20131001015040) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
-    t.text     "gif_url"
+    t.text     "poster_url"
     t.text     "trailer_url"
     t.text     "description"
     t.datetime "created_at"
