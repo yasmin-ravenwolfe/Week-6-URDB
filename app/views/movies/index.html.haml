@@ -1,6 +1,8 @@
-%h1
-  %i.icon-film
-  Movies
+.title
+  %h1 Movies
+
+.actions
+  = link_to '<i class="icon-film"></i> New Movie'.html_safe, new_movie_path, :class => 'button right'
 
 %table
   %tr
@@ -16,4 +18,4 @@
 
 %br
 
-= link_to 'New Movie', new_movie_path
+

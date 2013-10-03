@@ -9,6 +9,15 @@ body {
   @include grid-row;
 }
 
+.title {
+  @include grid-column(6);
+}
+
+.actions {
+  @include grid-column(6);
+  padding-top: 10px;
+}
+
 table {
   width: 100%;
   font-size: 2em;
@@ -16,4 +25,8 @@ table {
   td.centered {
     text-align: center;
   }
+}
+
+a.button:visited {
+  color: white;
 }
