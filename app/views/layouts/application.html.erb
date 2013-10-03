@@ -25,10 +25,15 @@
   <body>
     <%= render partial: 'layouts/navbar' %>
 
+    <% if notice %>
+      <div class="alert-box success"><%= notice %></div>
+    <% elsif alert %>
+      <div class="alert-box alert"><%= alert %></div>
+    <% end %>
+
     <div class="main">
       <%= yield %>
     </div>
-
 
     <%= javascript_include_tag "application" %>
   </body>
