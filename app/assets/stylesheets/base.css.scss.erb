@@ -1,3 +1,10 @@
+@import 'foundation_and_overrides';
+@import 'foundation/components/grid';
+
 body {
   background-image: url(<%= asset_path('wavegrid.png') %>);
+}
+
+.main {
+  @include grid-row;
 }
