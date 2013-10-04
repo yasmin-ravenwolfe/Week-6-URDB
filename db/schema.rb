@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131003195404) do
   create_table "showings", force: true do |t|
     t.integer  "movie_id"
     t.string   "location"
-    t.string   "time"
+    t.datetime "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

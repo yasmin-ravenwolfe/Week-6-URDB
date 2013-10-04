@@ -41,6 +41,8 @@ gem 'haml-rails'
 
 gem 'simple_form'
 
+gem 'chronic'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

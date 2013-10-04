@@ -1,11 +1,9 @@
-@import 'foundation_and_overrides';
-@import 'foundation/components/grid';
-
 body {
   background-image: url(<%= asset_path('wavegrid.png') %>);
 }
 
 .main {
+  padding-top: 40px;
   @include grid-row;
 }
 
@@ -16,15 +14,6 @@ body {
 .actions {
   @include grid-column(6);
   padding-top: 15px;
-}
-
-table {
-  width: 100%;
-  font-size: 2em;
-
-  td.centered {
-    text-align: center;
-  }
 }
 
 a.button:visited {

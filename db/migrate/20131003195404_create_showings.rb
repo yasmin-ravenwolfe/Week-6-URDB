@@ -3,7 +3,7 @@ class CreateShowings < ActiveRecord::Migration
     create_table :showings do |t|
       t.references      :movie
       t.string          :location
-      t.string          :time
+      t.datetime        :time
 
       t.timestamps
     end

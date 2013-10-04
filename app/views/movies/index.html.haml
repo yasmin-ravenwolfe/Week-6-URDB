@@ -4,12 +4,13 @@
 .actions
   = link_to '<i class="icon-film"></i> New Movie'.html_safe, new_movie_path, :class => 'button right'
 
-%table
-  %tr
+%table.movies
+  %thead
     %th Title
     %th
     %th
 
+  %tbody
   - @movies.each do |movie|
     %tr
       %td= link_to movie.title, movie

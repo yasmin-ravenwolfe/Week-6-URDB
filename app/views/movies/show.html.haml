@@ -1,42 +1,30 @@
-.row
-  .small-3.large-3.columns#poster
-    %img{src: @movie.poster_url.to_s}
-  .small-9.large-9.columns#title
-    %h1= @movie.title
-  .small-9.large-9.columns#description
-    %p= @movie.description
-  .small-9.large-9.columns#trailer
-    %i.icon-youtube-play
-    =link_to "Watch the trailer on YouTube", @movie.trailer_url, {target: "blank"}
+#poster
+  %img{src: @movie.poster_url.to_s}
 
-.row
-  .small-12.columns
+#movie
+  #info
+    #title
+      %h1= @movie.title
+    #description
+      %p= @movie.description
+    #trailer
+      %i.icon-youtube-play
+      =link_to "Watch the trailer on YouTube", @movie.trailer_url, {target: "blank"}
+
+  #showings
     %h2.centered Showings
-  .small-12.columns
+
     %table
-      %th
-        %td Location
-        %td Time
+      %thead
+        %th Location
+        %th Time
+      %tbody
       - @showings.each do |showing|
         %tr
           %td= showing.location
-          %td= showing.time
+          %td= showing.time.to_s(:simple)
 
-.row
-  .small-12.columns
-    = form_for :showing do |f|
-      .row
-        .small-6.columns
-          = f.label :location
-          = f.text_field :location
-        .small-3.columns
-          = f.label :time
-          = f.text_field :time
-        .small-3.columns
-          = f.submit
-
-.row
-  .small-12.columns
-    = link_to 'Edit', edit_movie_path(@movie)
-    \|
-    = link_to 'Back', movies_path
+    = simple_form_for [@movie, @showing] do |f|
+      .location= f.input :location
+      .time= f.input :time
+      .submit= f.button :submit

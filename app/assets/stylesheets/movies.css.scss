@@ -1,3 +1,57 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table.movies {
+  width: 100%;
+  font-size: 2em;
+
+  td.centered {
+    text-align: center;
+  }
+}
+
+#poster {
+  @include grid-column(3);
+  padding: 0px;
+}
+
+#movie {
+  @include grid-column(9);
+
+  #info {
+    @include grid-row;
+  }
+}
+
+#showings {
+  @include grid-row;
+  margin-top: 20px;
+
+  h2, table, form {
+    @include grid-row;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  form {
+    margin-top: 30px;
+
+    input.button {
+      margin-top: 8px;
+    }
+  }
+
+  .location {
+    @include grid-column(6);
+  }
+
+  .time {
+    @include grid-column(3);
+  }
+
+  .submit {
+    @include grid-column(3);
+  }
+}
