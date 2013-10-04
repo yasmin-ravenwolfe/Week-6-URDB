@@ -11,20 +11,20 @@
       %i.icon-youtube-play
       =link_to "Watch the trailer on YouTube", @movie.trailer_url, {target: "blank"}
 
-  #showings
-    %h2.centered Showings
+  #showtimes
+    %h2.centered Showtimes
 
     %table
       %thead
         %th Location
         %th Time
       %tbody
-      - @showings.each do |showing|
+      - @showtimes.each do |showtime|
         %tr
-          %td= showing.location
-          %td= showing.time.to_s(:simple)
+          %td= showtime.location
+          %td= showtime.time.to_s(:simple)
 
-    = simple_form_for [@movie, @showing] do |f|
+    = simple_form_for [@movie, @showtime] do |f|
       .location= f.input :location
       .time= f.input :time
       .submit= f.button :submit
