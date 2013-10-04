@@ -19,12 +19,24 @@
         %th Location
         %th Time
       %tbody
-      - @showtimes.each do |showtime|
         %tr
-          %td= showtime.location
-          %td= showtime.time.to_s(:simple)
+          %td Paramount Theater
+          %td 10/5/13 2:00pm
+        %tr
+          %td Tinseltown
+          %td 10/5/13 4:00pm
+        %tr
+          %td Regal
+          %td 10/5/13 7:00pm
 
-    = simple_form_for [@movie, @showtime] do |f|
-      .location= f.input :location
-      .time= f.input :time
-      .submit= f.button :submit
+    %form{action: "/movies/#{@movie.id}/showtimes", method: "post"}
+      .location
+        %label Location
+        %input{type: "text"}
+      
+      .time
+        %label Time
+        %input{type: "text"}
+      
+      .submit
+        %input.button{name: "commit", type: "submit", value: "Create Showtime"}
