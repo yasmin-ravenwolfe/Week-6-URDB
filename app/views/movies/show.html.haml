@@ -7,30 +7,40 @@
       %h1= @movie.title
     #description
       %p= @movie.description
+    #cast
+      - if @movie.roles
+        %h2.centered Cast
+        %ul
+          - @movie.roles.each do |r|
+            %li 
+              =image_tag(r.star.headshot_url)
+              ="#{r.character} - #{r.star.name}"
+        %br
+        %br
     #trailer
       %i.icon-youtube-play
       =link_to "Watch the trailer on YouTube", @movie.trailer_url, {target: "blank"}
 
-  #showtimes
-    %h2.centered Showtimes
+    #showtimes
+      %h2.centered Showtimes
 
-    %table
-      %thead
-        %th Location
-        %th Time
-      %tbody
-        - @showtimes.each do |showtime|
-          %tr
-            %td= showtime.location
-            %td= showtime.time
+      %table
+        %thead
+          %th Location
+          %th Time
+        %tbody
+          - @showtimes.each do |showtime|
+            %tr
+              %td= showtime.location
+              %td= showtime.time
 
-    = form_for [@movie, @showtime] do |f|
-      .location
-        = f.label :location
-        = f.text_field :location
-      .time
-        = f.label :time
-        = f.text_field :time
-      .submit
-        = f.submit 'Create Showtime', :class => "button"
+      = form_for [@movie, @showtime] do |f|
+        .location
+          = f.label :location
+          = f.text_field :location
+        .time
+          = f.label :time
+          = f.text_field :time
+        .submit
+          = f.submit 'Create Showtime', :class => "button"
     
