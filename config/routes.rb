@@ -3,7 +3,7 @@ Urdb::Application.routes.draw do
     resources :showtimes
   end
 
-  resources :stars
+  resources :stars, only: [:show]
 
   root 'movies#index'
 end

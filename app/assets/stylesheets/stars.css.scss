@@ -1,0 +1,42 @@
+// Place all the styles related to the Stars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table.movies {
+  width: 100%;
+  font-size: 2em;
+
+  td.centered {
+    text-align: center;
+  }
+}
+
+#headshot {
+  @include grid-column(3);
+  padding: 0px;
+}
+
+#star {
+  @include grid-column(9);
+
+  #info {
+    @include grid-row;
+  }
+}
+
+#movies {
+  img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  li:nth-child(odd) {
+    background-color: #D3D3D3;
+  }
+
+  ul {
+    list-style-type: none;
+    background-color: white;
+    max-width: 400px;
+  }
+}
+
