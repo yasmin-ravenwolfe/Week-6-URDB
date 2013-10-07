@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe ShowtimesController do
+  let(:valid_attributes) { { "time" => "10/27/13 5:00pm" } }
+
   describe "POST create" do
-    describe "with valid params" do
+    context "with valid params" do
       it "creates a new Showtime" do
         expect {
           post :create, {:showtime => valid_attributes}
@@ -21,7 +23,7 @@ describe ShowtimesController do
       end
     end
 
-    describe "with invalid params" do
+    context "with invalid params" do
       it "assigns a newly created but unsaved showtime as @showtime" do
         # Trigger the behavior that occurs when invalid params are submitted
         allow_any_instance_of(Showtime).to receive(:save).and_return(false)
