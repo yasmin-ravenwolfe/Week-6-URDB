@@ -11,12 +11,12 @@
       - if @movie.roles
         %h2.centered Cast
         %ul
-          - @movie.roles.each do |r|
-            %li 
-              =image_tag(r.star.headshot_url)
-              ="#{r.character} - #{r.star.name}"
-        %br
-        %br
+          - @movie.roles.each do |role|
+            %li
+              = link_to role.star do
+                = image_tag(role.star.headshot_url)
+                %span.character= "#{role.character} -"
+                = role.star.name
     #trailer
       %i.icon-youtube-play
       =link_to "Watch the trailer on YouTube", @movie.trailer_url, {target: "blank"}
@@ -43,4 +43,3 @@
           = f.text_field :time
         .submit
           = f.submit 'Create Showtime', :class => "button"
-    
