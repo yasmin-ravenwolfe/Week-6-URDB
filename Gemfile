@@ -38,6 +38,8 @@ gem 'zurb-foundation'
 gem 'haml-rails'
 gem 'simple_form'
 
+gem 'rottentomatoes'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
