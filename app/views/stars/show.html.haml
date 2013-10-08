@@ -13,7 +13,7 @@
         %ul
           - @star.movies.each do |m|
             %li
-              =link_to do
+              =link_to m do
                 =image_tag(m.poster_url)
                 ="#{m.title}"
         %br
