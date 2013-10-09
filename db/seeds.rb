@@ -20,6 +20,13 @@ yes_man = Movie.create({
     description: "A guy challenges himself to say 'yes' to everything for an entire year."
   })
 
+samsara = Movie.create({
+    title: "Samsara",
+    poster_url: "http://upload.wikimedia.org/wikipedia/en/thumb/7/78/Samsara_Film_Poster.jpg/220px-Samsara_Film_Poster.jpg",
+    trailer_url: "http://www.youtube.com/watch?v=P0xVp3N-M84",
+    description: "Filmed over nearly five years in twenty-five countries on five continents, and shot on seventy-millimetre film, Samsara transports us to the varied worlds of sacred grounds, disaster zones, industrial complexes, and natural wonders."
+  })
+
 jim_carrey = Star.create(name: 'Jim Carrey',
                       headshot_url: 'http://ia.media-imdb.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_SY317_CR22,0,214,317_.jpg',
                       bio: 'Jim Carrey, a Canadian-born actor who became a naturalized American citizen in 2004, is an actor and producer famous for his rubbery body movements and flexible facial expressions.')
