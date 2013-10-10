@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
   validates :title, presence: true
 
   def rotten_finder
-    rotten_finder_return = @movie =  RottenMovie.find(title: title, limit: 1)
+    RottenMovie.find(title: title, limit: 1)
   end
   
   def snippet
@@ -13,11 +13,28 @@ class Movie < ActiveRecord::Base
   end
 
   def audience_rating
-    rotten_finder_return = self.rotten_finder
-    if rotten_finder_return == []
+    rotten_finder.ratings.audience_score unless rotten_finder.empty?
+  end
+
+  def self.average_rating
+    # get all movie scores
+    scores = self.all.collect do |movie|
+      movie.audience_rating
+    end
+    if scores == nil
       return nil
+    # add all movie scores together
     else
-      rotten_finder_return.ratings.audience_score
+      score_sum = scores.compact.sum
+    # these two methods work too
+    # score_sum = 0
+    # scores.each{|s| score_sum += s}
+    # score_sum = scores.inject(0,:+)
+    # divide by number of movies
+      score_average = score_sum  / scores.length
     end
   end
+
 end
+
+
